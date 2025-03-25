@@ -1,8 +1,8 @@
 #include <ESP8266WiFi.h>
 #include <PubSubClient.h>
 
-const char* ssid = "Adhan";  // your own WiFi
-const char* password = "wahyuramadhan";
+const char* ssid = "yourWifiName";  // your own WiFi
+const char* password = "yourWIfiPassword";
 const char* mqtt_server = "broker.emqx.io";  
 
 WiFiClient espClient;
@@ -141,12 +141,12 @@ void reconnect() {
         Serial.print("Connecting to MQTT...");
         if (client.connect("mqttx_edd67096")) {
             Serial.println("Connected");
-            client.subscribe("IoT/group8");
+            client.subscribe("IoT/example");
         } else {
             Serial.print("Failed, rc=");
             Serial.print(client.state());
             Serial.println(" try again in 5 seconds....");
-            delay(500);
+            delay(5000);
         }
     }
 }
