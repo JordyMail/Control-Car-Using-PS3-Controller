@@ -22,3 +22,34 @@ PubSubClient client(espClient);
 
 //default speed (0-1023)
 int speedValue = 255;
+
+void setup() {
+    Serial.begin(115200);
+    
+    // Inisialisasi WiFi
+    WiFi.begin(ssid, password);
+    while (WiFi.status() != WL_CONNECTED) {
+        delay(500);
+        Serial.print(".");
+    }
+    Serial.println("\nConnected to WiFi");
+
+    // MQTT
+    client.setServer(mqtt_server, 1883);
+    client.setCallback(callback);
+    
+    reconnect();
+
+    // Setup pin Light
+    pinMode(Green, OUTPUT);
+    pinMode(Red, OUTPUT);
+
+    // Setup pin motor
+    pinMode(ENA, OUTPUT);
+    pinMode(ENB, OUTPUT);
+    pinMode(MOTOR_A1, OUTPUT);
+    pinMode(MOTOR_A2, OUTPUT);
+    pinMode(MOTOR_B1, OUTPUT);
+    pinMode(MOTOR_B2, OUTPUT);
+
+  
