@@ -80,3 +80,21 @@ void turnLeft() {
  digitalWrite(MOTOR_B1, HIGH);
  digitalWrite(MOTOR_B2, LOW);
 }
+
+void turnRight() {
+    analogWrite(ENA, speedValue);
+    analogWrite(ENB, speedValue);
+    digitalWrite(MOTOR_A1, HIGH);
+    digitalWrite(MOTOR_A2, LOW);
+    digitalWrite(MOTOR_B1, LOW);
+    digitalWrite(MOTOR_B2, HIGH);
+}
+
+void stopCar() {
+    analogWrite(ENA, 0);
+    analogWrite(ENB, 0);
+    digitalWrite(MOTOR_A1, LOW);
+    digitalWrite(MOTOR_A2, LOW);
+    digitalWrite(MOTOR_B1, LOW);
+    digitalWrite(MOTOR_B2, LOW);
+}
