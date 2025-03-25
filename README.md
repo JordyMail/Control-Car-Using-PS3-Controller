@@ -29,6 +29,10 @@ This project enables a user to control a robot car using a PlayStation 3 (PS3) c
 - **Connect the PS3 controller to the computer via USB or Bluetooth.**
 - **Power the ESP8266 using a battery pack (5V recommended).**
 
+## **Image**
+![esp8266 car](https://github.com/user-attachments/assets/9e79ed9e-31da-48c2-b145-5565c09e69a3)
+
+
 ## **Software Overview**
 This project consists of two main parts:
 1. **Python Code** (on the computer) to read PS3 joystick input and publish MQTT messages.
