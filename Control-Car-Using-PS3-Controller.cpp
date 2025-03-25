@@ -98,3 +98,39 @@ void stopCar() {
     digitalWrite(MOTOR_B1, LOW);
     digitalWrite(MOTOR_B2, LOW);
 }
+
+// Callback when MQTT message is received
+void callback(char* topic, byte* payload, unsigned int length) {
+    String message = "";
+    for (int i = 0; i < length; i++) {
+        message += (char)payload[i];
+    }
+    Serial.println("message received: " + message);
+
+    if (message == "forward") {
+        moveForward();
+        digitalWrite(Green, HIGH);
+        digitalWrite(Red, LOW);
+    } else if (message == "backward") {
+        moveBackward();
+        digitalWrite(Green, HIGH);
+        digitalWrite(Red, LOW);
+    } else if (message == "left") {
+        turnLeft();
+        digitalWrite(Green, HIGH);
+        digitalWrite(Red, LOW);
+    } else if (message == "right") {
+        turnRight();
+        digitalWrite(Green, HIGH);
+        digitalWrite(Red, LOW);
+    } else if (message == "stop") {
+        stopCar();
+        digitalWrite(Red, HIGH);
+        digitalWrite(Green, LOW);
+    } else if (message.startsWith("speed:")) {
+        speedValue = message.substring(6).toInt();
+        analogWrite(ENA, speedValue);
+        analogWrite(ENB, speedValue);
+        Serial.println("Speed ​​is changed to: " + String(speedValue));
+    }
+}
