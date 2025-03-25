@@ -134,3 +134,26 @@ void callback(char* topic, byte* payload, unsigned int length) {
         Serial.println("Speed ​​is changed to: " + String(speedValue));
     }
 }
+
+// Function to ensure the connection to MQTT remains active
+void reconnect() {
+    while (!client.connected()) {
+        Serial.print("Connecting to MQTT...");
+        if (client.connect("mqttx_edd67096")) {
+            Serial.println("Connected");
+            client.subscribe("IoT/group8");
+        } else {
+            Serial.print("Failed, rc=");
+            Serial.print(client.state());
+            Serial.println(" try again in 5 seconds....");
+            delay(5000);
+        }
+    }
+}
+
+void loop() {
+    if (!client.connected()) {
+        reconnect();
+    }
+    client.loop();
+}
