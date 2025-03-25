@@ -146,7 +146,7 @@ void reconnect() {
             Serial.print("Failed, rc=");
             Serial.print(client.state());
             Serial.println(" try again in 5 seconds....");
-            delay(5000);
+            delay(500);
         }
     }
 }
