@@ -52,4 +52,31 @@ void setup() {
     pinMode(MOTOR_B1, OUTPUT);
     pinMode(MOTOR_B2, OUTPUT);
 
-  
+  //set intiial speed
+ analogWrite(ENA, speedValue);
+ analogWrite(ENB, speedValue);
+}
+void moveForward() {
+    analogWrite(ENA, speedValue);
+    analogWrite(ENB, speedValue);
+    digitalWrite(MOTOR_A1, HIGH);
+    digitalWrite(MOTOR_A2, LOW);
+    digitalWrite(MOTOR_B1, HIGH);
+    digitalWrite(MOTOR_B2, LOW);
+}
+void moveBackward() {
+    analogWrite(ENA, speedValue);
+    analogWrite(ENB, speedValue);
+    digitalWrite(MOTOR_A1, LOW);
+    digitalWrite(MOTOR_A2, HIGH);
+    digitalWrite(MOTOR_B1, LOW);
+    digitalWrite(MOTOR_B2, HIGH);
+}
+void turnLeft() {
+ analogWrite(ENA, speedValue);
+ analogWrite(ENB, speedValue);
+ digitalWrite(MOTOR_A1, LOW);
+ digitalWrite(MOTOR_A2, HIGH);
+ digitalWrite(MOTOR_B1, HIGH);
+ digitalWrite(MOTOR_B2, LOW);
+}
