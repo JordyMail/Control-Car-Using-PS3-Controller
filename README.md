@@ -1,6 +1,6 @@
 # **PS3 Controlled IoT Car Using ESP8266 and MQTT**
 
-<img src="https://github.com/user-attachments/assets/b21a6400-ddb0-4c83-8a0e-cda4db1e1db6" width="500" height="auto">
+<img src="https://github.com/user-attachments/assets/b21a6400-ddb0-4c83-8a0e-cda4db1e1db6" width="450" height="auto">
 
 ## **Project Overview**
 This project enables a user to control a robot car using a PlayStation 3 (PS3) controller via an MQTT protocol. The system consists of a PS3 controller, a computer running a Python script to read joystick inputs and send MQTT messages, and an ESP8266-based car that receives and processes the MQTT messages to move accordingly.
@@ -32,7 +32,7 @@ This project enables a user to control a robot car using a PlayStation 3 (PS3) c
 - **Power the ESP8266 using a battery pack (5V recommended).**
 
 ## **Image**
-![esp8266 car](https://github.com/user-attachments/assets/9e79ed9e-31da-48c2-b145-5565c09e69a3)
+<img src="https://github.com/user-attachments/assets/9e79ed9e-31da-48c2-b145-5565c09e69a3" width="600" height="auto">
 
 
 ## **Software Overview**
