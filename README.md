@@ -183,5 +183,7 @@ void loop() {
 - Add voice command support.
 - Add a camera module for remote vision.
 
-Enjoy controlling your car wirelessly with a PS3 controller and MQTT!
+
+
+note: feel free to contribute👌
 
